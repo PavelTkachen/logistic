@@ -24,7 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(routes.auth);
-app.use(routes.users);
+for (let route in routes) {
+    app.use(routes[route]);
+};
 
 app.listen(port, () => { console.log('Website is running') });

@@ -18,9 +18,7 @@ router.post('/login', (req, res, next) => {
 
 /* GET запрос разлогина */
 router.get('/logout', (req: Request, res: Response) => {
-  req.session.destroy((err: string) => {
-    res.sendStatus(400).send(`Bad request: ${err.toString()}`);
-  });
+  req.session.destroy(() => null);
   res.send('Thank you! Visit again');
 });
 

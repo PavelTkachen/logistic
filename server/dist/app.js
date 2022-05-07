@@ -18,7 +18,9 @@ app.use((0, express_session_1.default)({
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cookie_parser_1.default)());
-app.use(routes_1.routes.auth);
-app.use(routes_1.routes.users);
+for (let route in routes_1.routes) {
+    app.use(routes_1.routes[route]);
+}
+;
 app.listen(port, () => { console.log('Website is running'); });
 //# sourceMappingURL=app.js.map

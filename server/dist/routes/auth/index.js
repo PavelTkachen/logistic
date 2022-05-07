@@ -21,7 +21,7 @@ router.post('/login', (req, res, next) => {
 });
 /* GET запрос разлогина */
 router.get('/logout', (req, res) => {
-    req.session.destroy((err) => { });
+    req.session.destroy(() => null);
     res.send('Thank you! Visit again');
 });
 exports.default = router;
