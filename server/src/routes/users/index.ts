@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkAuth } from '../../utils/auth';
+import { checkAuth } from 'utils/auth';
 
 const router = express.Router();
 
