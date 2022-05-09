@@ -1,8 +1,7 @@
-import users from './users';
 import auth from './auth';
+import users from './users';
 
-
-export const routes = {
+export default {
   auth,
   users
 }
