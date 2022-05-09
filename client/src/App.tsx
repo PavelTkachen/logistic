@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { UserPage } from './pages/UsersPage';
 import { AuthPage } from './pages/AuthPage';
-import { AuthProvider, useAuth } from './providers/AuthProvider';
+import { AuthProvider } from './providers/AuthProvider';
 import { RequireAuth } from './componets/common/RequireAuth';
 import { RoutePage } from 'common/entities';
 import { MainLayout } from 'layouts/MainLayout';
@@ -20,7 +20,6 @@ const PRIVATE_ROUTES: RoutePage[] = [
 ]
 
 export const AppRoutes: React.FC = () => {
-  const auth = useAuth();
   return (
     <AuthProvider>
       <BrowserRouter>
