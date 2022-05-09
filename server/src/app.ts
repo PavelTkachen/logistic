@@ -2,7 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import { routes } from './routes';
-
+import cors from 'cors';
 const app = express();
 const port = 8000;
 
@@ -23,6 +23,7 @@ app.use(session(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors);
 
 for (let route in routes) {
     app.use(routes[route]);
