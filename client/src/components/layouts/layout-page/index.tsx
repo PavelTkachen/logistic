@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './style.less';
 import themes from '@src/utils/themes';
 
-interface Props {
+type Props = {
   theme: string | string[];
   children?: React.ReactNode;
   header?: React.ReactNode;
@@ -19,14 +19,6 @@ function LayoutPage(props: Props) {
       <div className="LayoutPage__footer">{props.footer}</div>
     </div>
   );
-}
-
-LayoutPage.propTypes = {
-  header: PropTypes.node,
-  content: PropTypes.node,
-  footer: PropTypes.node,
-  children: PropTypes.node,
-  theme: PropTypes.oneOfType([PropTypes.string, PropTypes.array]), // можно передать несколько тем через пробел или массивом
 };
 
 LayoutPage.defaultProps = {

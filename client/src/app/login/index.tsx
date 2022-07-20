@@ -1,8 +1,8 @@
 import React, { Fragment, useCallback } from 'react';
 import LayoutPage from '@src/components/layouts/layout-page';
 import HeaderContainer from '@src/containers/header-container';
-import LayoutContent from '@src/components/layouts/layout-content';
-import FormLogin from '@src/components/forms/form-login';
+import { LayoutContent } from '@src/components/layouts/layout-content';
+import { FormLogin } from '@src/components/forms/form-login';
 import useSelector from '@src/utils/hooks/use-selector';
 import useServices from '@src/utils/hooks/use-services';
 
@@ -19,8 +19,6 @@ function Login() {
     }, []),
     onSubmitForm: useCallback(async (data: any) => {
       await services.store.formLogin.submit(data);
-      // @todo перейти на страницу, с которой был редирект или по умочланию в приватный раздел
-      services.navigation.goPrivate();
     }, []),
   };
 

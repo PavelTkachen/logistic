@@ -1,5 +1,5 @@
 import React from 'react';
-import LayoutContent from '@src/components/layouts/layout-content';
+import { LayoutContent } from '@src/components/layouts/layout-content';
 import LayoutPage from '@src/components/layouts/layout-page';
 
 function Loading() {
