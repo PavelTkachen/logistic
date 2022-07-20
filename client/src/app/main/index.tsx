@@ -24,9 +24,6 @@ function Main() {
       <LayoutContent>
         <h1>Главная страница</h1>
         <p>
-          <Link to="/private">Раздел для авторизованных</Link>
-        </p>
-        <p>
           <Button onClick={callbacks.showInfo}>Показать модалку</Button>
         </p>
         <Accordion title={'Заголовок'}>

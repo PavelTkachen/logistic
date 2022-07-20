@@ -7,7 +7,7 @@ import { Router } from 'react-router-dom';
  * @param children
  * @return {JSX.Element}
  */
-function RouterProvider({ navigation, children }: { navigation: any, children: JSX.Element }) {
+function RouterProvider({ navigation, children }: { navigation: any, children: JSX.Element }): JSX.Element {
   const [state, setState] = useState({
     location: navigation.location,
     action: navigation.action,

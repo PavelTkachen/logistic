@@ -1,15 +1,14 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import PropTypes from 'prop-types';
 import detectActive from '@src/utils/detect-active';
 import LayoutHeader from '@src/components/layouts/layout-header';
-import MenuTop from '@src/components/menus/menu-top';
+import { MenuTop } from '@src/components/menus/menu-top';
 import Button from '@src/components/elements/button';
 import Logo from '@src/components/elements/logo';
 import { useLocation } from 'react-router-dom';
 import useSelector from '@src/utils/hooks/use-selector';
 import useServices from '@src/utils/hooks/use-services';
 
-interface Props {}
+interface Props { }
 
 function HeaderContainer(props: Props) {
   const select: any = useSelector((state: any) => ({
@@ -22,9 +21,6 @@ function HeaderContainer(props: Props) {
     detectActive(
       [
         { title: 'Главная', to: '/', active: false },
-        { title: 'О нас', to: '/about', active: false },
-        { title: 'Каталог', to: '/catalog', active: false },
-        { title: 'Админка', to: '/private', active: false },
       ],
       location,
     ),
@@ -49,19 +45,11 @@ function HeaderContainer(props: Props) {
   const renders = {
     right: useMemo(() => {
       let result = [];
-      if (select.session.exists) {
-        result.push(
-          <Button key={1} theme={['clear-white', 'margins']} onClick={callbacks.onClickLogout}>
-            Выход
-          </Button>,
-        );
-      } else {
-        result.push(
-          <Button key={1} theme={['clear-white', 'margins']} onClick={callbacks.onClickLogin}>
-            Вход
-          </Button>,
-        );
-      }
+      result.push(
+        <Button theme={['clear-white', 'margins']} onClick={callbacks.onClickLogout}>
+          Выход
+        </Button>,
+      );
       return result;
     }, [select.session, callbacks.onClickLogout, callbacks.onClickLogin]),
   };
