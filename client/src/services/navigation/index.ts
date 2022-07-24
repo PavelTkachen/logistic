@@ -140,7 +140,7 @@ class NavigationService implements NavigationService {
     if (push) {
       window.history.pushState({}, '', url);
     } else {
-      window.history.replaceState({}, '', url);
+      window.history  .replaceState({}, '', url);
     }
   }
 
